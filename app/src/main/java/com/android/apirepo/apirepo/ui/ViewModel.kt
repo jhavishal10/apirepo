@@ -9,10 +9,9 @@ import com.android.apirepo.apirepo.model.DetailItem
 
 class ViewModel : ViewModel() {
 
-
     val users = MutableLiveData<List<DetailItem.Item>>()
-    val u = mutableListOf<DetailItem.Item>()
 
+    val u = mutableListOf<DetailItem.Item>()
 
     init {
         Repository.getResponse(::onDataLoaded)
@@ -20,7 +19,6 @@ class ViewModel : ViewModel() {
 
     private fun onDataLoaded(data: ApiRepoResponse?) {
         if (data == null) return
-
         data.forEach() {
                 u.add(
                     DetailItem.Item(
